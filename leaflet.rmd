@@ -1,0 +1,11 @@
+library(leaflet)
+map <- leaflet() %>% addTiles()
+MITIcon <- makeIcon(
+  iconUrl = "https://college4u.in/wp-content/uploads/2017/01/MANIZ-768x403.jpg",
+  iconWidth = 30*408/255, iconHeight = 30,
+  iconAnchorX = 30*408/255/2, iconAnchorY = 30/2
+)
+MITPopup <- c("<a href= 'https://college4u.in/wp-content/uploads/2017/01/MANIZ-768x403.jpg>MIT><img src='https://college4u.in/wp-content/uploads/2017/01/MANIZ-768x403.jpg' width='210' height='132'  alt='Foto Corps de Logis' title='Foto Corps de Logi'></a>")
+map %>%
+  addTiles() %>%
+  addMarkers(lat=13.35, lng=74.7933, popup = MITPopup)
